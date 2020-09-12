@@ -1,4 +1,4 @@
-# Genstage Draining
+# GenStage Draining
 
 ## Background
 This project demonstrates an approach to draining buffered events at shutdown in a GenStage pipeline.
