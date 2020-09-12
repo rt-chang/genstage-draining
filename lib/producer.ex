@@ -1,7 +1,4 @@
 defmodule GenStageDraining.Producer do
-  @moduledoc """
-  Documentation for `ElixirGenstageDraining`.
-  """
   use GenStage
 
   def start_link(_args) do
