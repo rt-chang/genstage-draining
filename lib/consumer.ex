@@ -24,7 +24,7 @@ defmodule GenStageDraining.Consumer do
   def handle_events(events, _from, state) do
     for event <- events do
       :timer.sleep(100)
-      IO.puts("#{event} has been handled")
+      IO.puts("Event ID:#{event} has been handled")
     end
     {:noreply, [], state}
   end
