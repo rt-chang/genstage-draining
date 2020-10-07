@@ -4,7 +4,7 @@
 This project demonstrates an approach to draining buffered events at shutdown in a GenStage pipeline.
 This particular pipeline handles the processing of numbers. The Consumer will demand a number from the Producer in order to output it to console.
 
-There is the ability to drain buffered events with [Broadway](https://hexdocs.pm/broadway/Broadway.html), but I wanted to explore a way of doing it with just GenStage itself
+There is the ability to drain buffered events with [Broadway](https://hexdocs.pm/broadway/Broadway.html), but it did not fit my use case -- or perhaps I was not using it correctly. I wanted to ensure that the Consumer would have enough time to process data in-flight at the invocation of shutting down
  
 ## About the Code
 The Producer features the use of the Erlang queue and keeps track of accumulated demand via a counter. This was modelled after the examples given in the [GenStage documentation](https://hexdocs.pm/gen_stage/GenStage.html#module-buffering-demand) and this [tutorial by Johanna Larsson](https://blog.jola.dev/push-based-genstage). 
