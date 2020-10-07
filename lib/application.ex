@@ -4,7 +4,7 @@ defmodule GenStageDraining.Application do
   def start(_type, _args) do
     children = [
       GenStageDraining.Producer,
-      Supervisor.child_spec(GenStageDraining.Consumer, shutdown: 10_000)
+      Supervisor.child_spec(GenStageDraining.Consumer, shutdown: 30_000)
     ]
 
     Supervisor.start_link(children, strategy: :one_for_one, name: __MODULE__)
