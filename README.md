@@ -15,11 +15,9 @@ It should be noted that the Consumer is given 10 seconds to complete the drainin
 
 ## To Run
 1. Run `iex -S mix` in console
-2. Run the helper function to load _n_ events into the Producer. This is done by calling `GenStageDraining.Helper.enqueue_n_events(n)` with a sufficiently large number
+2. Run the helper function to load _n_ events into the Producer. This is done by calling `GenStageDraining.Helper.enqueue_n_events(n)` with a sufficiently large number (perhaps >5000)
 3. Arbitrarily call `:init.stop()` to shutdown the application and trigger the draining of events from the buffer queue. This can be done by copy/pasting the command into console as typing it out may be too slow
-4. You will observe that the console will output which event number is being drained
-
-*Note: There is an edge case where 1 event may be dropped -- and thus not processed/drained -- when invoking `:init_stop()`. I have yet to solve this issue*
+4. You can check the log file (located in `./log/info.log`) to see the output. Statements have been added in to observe when the application begins its termination routine, when the process' mailbox is emptied, and when events are drained from the pipeline
 
 
 
